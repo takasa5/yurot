@@ -21,14 +21,45 @@
     <div class="header-section">
         <div class="container">
             <div class="item" id="captionarea">
-                <img src="logo_w.svg">
+                <img id="logo" src="logo_w.svg">
                 <h2><b>夕焼けを捕まえにいこう</b></h2>
-                <div id="caption">Yurot(ユウロート)はあなたにもっと夕焼けを見てもらうためのアプリです。</div>
+                <div id="caption">Yurot(ユウロート)は、24時間のうちのごくわずかな時間しかない「夕暮れ時」を、もっと有意義に過ごすためのサービスです。</div>
                 <!-- <div class="btn">登録する</div> -->
             </div>
-            <div class="item" id="signature">
-
-            </div>
+            <form class="item" id="signature">
+                <button type="submit" class="btn" id="twitter">Twitterでログイン</button>
+                <div class="orarea">
+                    <div class="line"></div>
+                    <div class="or">または</div>
+                    <div class="line"></div>
+                </div>
+                <dl>
+                    <dt>
+                        <label>ユーザーID</label>
+                    </dt>
+                    <dd>
+                        <input type="text" placeholder="希望するユーザーID">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <label>メールアドレス</label>
+                    </dt>
+                    <dd>
+                        <input type="text" placeholder="your-address@example.com">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <label>パスワード</label>
+                    </dt>
+                    <dd>
+                        <input type="password" placeholder="6文字以上の数字を含む文字列">
+                    </dd>
+                </dl>
+                <button type="submit" class="btn">登録する</button>
+                <div id="induction">すでにアカウントをお持ちの方は<a>こちら</a></div>
+            </form>
         </div>
     </div>
 </div>
