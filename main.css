@@ -4,6 +4,7 @@
 body {
     margin: 0;
     background-color: black;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .center {
     position: absolute;
@@ -22,6 +23,64 @@ body {
     background-repeat: no-repeat;
     z-index: 3;
 }
+.header-section > .container {
+    display: flex;
+    height: auto;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    padding: 100px 20px;
+}
+.header-section .item {
+    /* height: 70%; */
+    width: 320px;
+}
+.header-section #caption {
+    text-align: left;
+}
+#captionarea {
+    width: 400px;
+}
+#signature {
+    width: 320px;
+    height: 300px;
+    background-color: white;
+    border-radius: 4px;
+}
+@media screen and (orientation: portrait) {
+    /* 縦向きの場合のスタイル */
+    .header-section > .container {
+        height: 60vh;
+        display: block;
+        padding: 0px;
+        padding-top: 50px;
+    }
+    #captionarea {
+        box-sizing: border-box;
+        width: 100vw;
+        padding: 0px 10px;
+    }
+    #signature {
+        display: none;
+    }
+    #caption {
+        padding: 0px 10px;
+    }
+}
+.btn {
+    color: black;
+    border: solid 3px black;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1px 10px;
+    transition: all .3s;
+}
+.btn:hover {
+    background-color: black;
+    color: white;
+    transition: all .3s;
+}
 .nav {
     position: absolute;
     height: 100%;
@@ -33,6 +92,9 @@ body {
     width: 100%;
     text-align: center;
     color: white;
+}
+#navlogo {
+    display: none;
 }
 /* .header::before {
     content: "";
@@ -46,20 +108,22 @@ body {
 } */
 .header-section {
     position: relative;
-    padding: 10% 0 10%;
+    /* padding: 10% 0 10%; */
     /* max-width: 640px; */
     width: 100%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); */
     font-family: "Montserrat", sans-serif;
 }
 h1 {
     font-weight: 500;
 }
 h2 {
+    margin-bottom: 5px;
+    margin-top: 15px;
     font-weight: 400;
 }
 .section-wrap {
@@ -70,6 +134,7 @@ h2 {
 .section {
     position: relative;
     padding: 40px;
+    padding-top: 0px;
     height: 85vh;
     overflow: hidden;
     text-align: center;
@@ -86,8 +151,8 @@ h2 {
 }
 #merit .item {
     padding: 40px 20px;
-    border: solid 5px white;
-    border-radius: 15px;
+    /* border: solid 5px white;
+    border-radius: 15px; */
     width: 30%;
     height: 100%;
     box-sizing: border-box;
@@ -104,6 +169,7 @@ h2 {
 #merit .comment {
     width: 100%;
     word-wrap: break-word;
+    text-align: left;
 }
 @media screen and (orientation: portrait) {
     /* 縦向きの場合のスタイル */
@@ -122,11 +188,25 @@ h2 {
     }
     #merit .item > .container > i {
         font-size: 5em;
-        margin-bottom: 0px;
-        margin-right: 10px;
+        margin-bottom: auto;
+        margin-right: 5px;
     }
     #merit .comment {
-        width: 50%;
+        width: 60%;
         word-wrap: break-word;
+        font-size: 0.9em;
     }
+}
+
+#footer {
+    background: radial-gradient(circle farthest-corner at bottom center, rgb(255, 211, 117), rgb(255, 130, 35) 20%, rgb(32, 49, 76) 60%);
+}
+
+.bottom-nav {
+    background-color: black;
+    color: white;
+    height: 30px;
+    padding: 0px 20px;
+    display: table-cell;
+    vertical-align: middle;
 }

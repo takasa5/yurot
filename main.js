@@ -2,15 +2,18 @@ function parallax_height() {
     var scroll_top = $(this).scrollTop();
     // var sample_section_top = $(".section").offset().top;
     var header_height = $(".header-section").outerHeight();
-    var hcontent_height = parseInt($(".header-section").css("padding-top")) + $(".header-section").height();
+    var hcontent_height = parseInt($(".header-section .container").css("padding-bottom")) + $(".header-section .container").height();
     $(".section-wrap").css({ "margin-top": header_height });
     // ナビバー
     if (header_height - scroll_top > 50) {
+        if ($("#navlogo").is(":visible"))
+            $("#navlogo").hide();
         $(".header").css({height: header_height - scroll_top});
         $(".nav").css({opacity: 1 - (header_height - scroll_top - 50) / (header_height - 50)});
     }else {
         $(".header").css({height: 50});
         $(".nav").css({opacity: 1});
+        $("#navlogo").fadeIn();
     }
 
     // hero内文字
@@ -24,7 +27,7 @@ function parallax_height() {
         $(".header-section").show();
 }
 function resizing() {
-    $(".section-wrap").css({ "margin-top": $(".header-section").outerHeight()});
+    $(".section-wrap").css({ "margin-top": $(".header").outerHeight()});
     $("#merit > .container").height($("#merit").height() - $("#merit > h2").outerHeight(true));
 }
 parallax_height();
@@ -36,5 +39,8 @@ $(window).resize(function() {
     resizing();
 });
 $(document).ready(function() {
+    resizing();
+});
+$(window).on("load", function() {
     resizing();
 });
